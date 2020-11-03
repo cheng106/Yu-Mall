@@ -15,6 +15,7 @@
 		<module>yumall-order</module>
 		<module>yumall-product</module>
 		<module>yumall-ware</module>
+		<module>renren-fast</module>
 	</modules>
 
 </project>

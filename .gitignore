@@ -30,3 +30,6 @@ hs_err_pid*
 
 .idea
 **/.gitignore
+db
+.DS_Store
+**.iml
