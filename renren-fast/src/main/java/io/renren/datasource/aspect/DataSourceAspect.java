@@ -1,9 +1,9 @@
 /**
- * Copyright (c) 2018 人人开源 All rights reserved.
+ * Copyright (c) 2018 人人開源 All rights reserved.
  *
  * https://www.renren.io
  *
- * 版权所有，侵权必究！
+ * 版權所有，侵權必究！
  */
 
 package io.renren.datasource.aspect;

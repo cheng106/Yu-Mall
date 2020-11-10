@@ -41,7 +41,7 @@ public class SysRoleEntity implements Serializable {
 	private String roleName;
 
 	/**
-	 * 备注
+	 * 備註
 	 */
 	private String remark;
 	
@@ -54,7 +54,7 @@ public class SysRoleEntity implements Serializable {
 	private List<Long> menuIdList;
 	
 	/**
-	 * 建立时间
+	 * 建立時間
 	 */
 	private Date createTime;
 

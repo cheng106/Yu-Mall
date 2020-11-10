@@ -83,7 +83,7 @@ public class SysUserEntity implements Serializable {
 	private Long createUserId;
 
 	/**
-	 * 建立时间
+	 * 建立時間
 	 */
 	private Date createTime;
 

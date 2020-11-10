@@ -19,7 +19,7 @@ import org.springframework.stereotype.Component;
 import java.util.Date;
 
 /**
- * jwt工具类
+ * jwt工具類
  *
  * @author Mark sunlightcs@gmail.com
  */
@@ -37,7 +37,7 @@ public class JwtUtils {
      */
     public String generateToken(long userId) {
         Date nowDate = new Date();
-        //過期时间
+        //過期時間
         Date expireDate = new Date(nowDate.getTime() + expire * 1000);
 
         return Jwts.builder()

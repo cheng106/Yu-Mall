@@ -88,7 +88,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserDao, SysUserEntity> i
 		//检查角色是否越权
 		checkRole(user);
 		
-		//保存使用者与角色关系
+		//保存使用者与角色關系
 		sysUserRoleService.saveOrUpdate(user.getUserId(), user.getRoleIdList());
 	}
 
@@ -105,7 +105,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserDao, SysUserEntity> i
 		//检查角色是否越权
 		checkRole(user);
 		
-		//保存使用者与角色关系
+		//保存使用者与角色關系
 		sysUserRoleService.saveOrUpdate(user.getUserId(), user.getRoleIdList());
 	}
 
@@ -139,7 +139,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserDao, SysUserEntity> i
 
 		//判断是否越权
 		if(!roleIdList.containsAll(user.getRoleIdList())){
-			throw new RRException("新增使用者所选角色，不是本人建立");
+			throw new RRException("新增使用者所選角色，不是本人建立");
 		}
 	}
 }

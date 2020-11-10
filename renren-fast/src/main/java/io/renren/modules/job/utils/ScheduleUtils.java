@@ -91,7 +91,7 @@ public class ScheduleUtils {
             //按新的cronExpression表達式重新构建trigger
             trigger = trigger.getTriggerBuilder().withIdentity(triggerKey).withSchedule(scheduleBuilder).build();
 
-            //参數
+            //參數
             trigger.getJobDataMap().put(ScheduleJobEntity.JOB_PARAM_KEY, scheduleJob);
 
             scheduler.rescheduleJob(triggerKey, trigger);

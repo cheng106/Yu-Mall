@@ -21,7 +21,7 @@ import io.renren.modules.sys.form.PasswordForm;
 import io.renren.modules.sys.service.SysUserRoleService;
 import io.renren.modules.sys.service.SysUserService;
 import org.apache.commons.lang.ArrayUtils;
-import org.apache.shiro.authz.annotation.RequiresPermissions;
+//renren-generator/src/main/resources/template/Controller.java.vm
 import org.apache.shiro.crypto.hash.Sha256Hash;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -47,7 +47,7 @@ public class SysUserController extends AbstractController {
      * 所有使用者列表
      */
     @GetMapping("/list")
-    @RequiresPermissions("sys:user:list")
+    //@RequiresPermissions("sys:user:list")
     public R list(@RequestParam Map<String, Object> params) {
         //只有超级管理員，才能查看所有管理員列表
         if (getUserId() != Constant.SUPER_ADMIN) {
@@ -92,7 +92,7 @@ public class SysUserController extends AbstractController {
      * 使用者訊息
      */
     @GetMapping("/info/{userId}")
-    @RequiresPermissions("sys:user:info")
+    //@RequiresPermissions("sys:user:info")
     public R info(@PathVariable("userId") Long userId) {
         SysUserEntity user = sysUserService.getById(userId);
 
@@ -108,7 +108,7 @@ public class SysUserController extends AbstractController {
      */
     @SysLog("儲存使用者")
     @PostMapping("/save")
-    @RequiresPermissions("sys:user:save")
+    //@RequiresPermissions("sys:user:save")
     public R save(@RequestBody SysUserEntity user) {
         ValidatorUtils.validateEntity(user, AddGroup.class);
 
@@ -123,7 +123,7 @@ public class SysUserController extends AbstractController {
      */
     @SysLog("修改使用者")
     @PostMapping("/update")
-    @RequiresPermissions("sys:user:update")
+    //@RequiresPermissions("sys:user:update")
     public R update(@RequestBody SysUserEntity user) {
         ValidatorUtils.validateEntity(user, UpdateGroup.class);
 
@@ -138,7 +138,7 @@ public class SysUserController extends AbstractController {
      */
     @SysLog("刪除使用者")
     @PostMapping("/delete")
-    @RequiresPermissions("sys:user:delete")
+    //@RequiresPermissions("sys:user:delete")
     public R delete(@RequestBody Long[] userIds) {
         if (ArrayUtils.contains(userIds, 1L)) {
             return R.error("系統管理員不能刪除");

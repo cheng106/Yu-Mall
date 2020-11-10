@@ -14,7 +14,7 @@ import io.renren.common.utils.R;
 import io.renren.common.validator.ValidatorUtils;
 import io.renren.modules.job.entity.ScheduleJobEntity;
 import io.renren.modules.job.service.ScheduleJobService;
-import org.apache.shiro.authz.annotation.RequiresPermissions;
+//renren-generator/src/main/resources/template/Controller.java.vm
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,7 +35,7 @@ public class ScheduleJobController {
 	 * 定時任務列表
 	 */
 	@RequestMapping("/list")
-	@RequiresPermissions("sys:schedule:list")
+	//@RequiresPermissions("sys:schedule:list")
 	public R list(@RequestParam Map<String, Object> params){
 		PageUtils page = scheduleJobService.queryPage(params);
 
@@ -46,7 +46,7 @@ public class ScheduleJobController {
 	 * 定時任務訊息
 	 */
 	@RequestMapping("/info/{jobId}")
-	@RequiresPermissions("sys:schedule:info")
+	//@RequiresPermissions("sys:schedule:info")
 	public R info(@PathVariable("jobId") Long jobId){
 		ScheduleJobEntity schedule = scheduleJobService.getById(jobId);
 		
@@ -58,7 +58,7 @@ public class ScheduleJobController {
 	 */
 	@SysLog("儲存定時任務")
 	@RequestMapping("/save")
-	@RequiresPermissions("sys:schedule:save")
+	//@RequiresPermissions("sys:schedule:save")
 	public R save(@RequestBody ScheduleJobEntity scheduleJob){
 		ValidatorUtils.validateEntity(scheduleJob);
 		
@@ -72,7 +72,7 @@ public class ScheduleJobController {
 	 */
 	@SysLog("修改定時任務")
 	@RequestMapping("/update")
-	@RequiresPermissions("sys:schedule:update")
+	//@RequiresPermissions("sys:schedule:update")
 	public R update(@RequestBody ScheduleJobEntity scheduleJob){
 		ValidatorUtils.validateEntity(scheduleJob);
 				
@@ -86,7 +86,7 @@ public class ScheduleJobController {
 	 */
 	@SysLog("刪除定時任務")
 	@RequestMapping("/delete")
-	@RequiresPermissions("sys:schedule:delete")
+	//@RequiresPermissions("sys:schedule:delete")
 	public R delete(@RequestBody Long[] jobIds){
 		scheduleJobService.deleteBatch(jobIds);
 		
@@ -98,7 +98,7 @@ public class ScheduleJobController {
 	 */
 	@SysLog("立即執行任務")
 	@RequestMapping("/run")
-	@RequiresPermissions("sys:schedule:run")
+	//@RequiresPermissions("sys:schedule:run")
 	public R run(@RequestBody Long[] jobIds){
 		scheduleJobService.run(jobIds);
 		
@@ -110,7 +110,7 @@ public class ScheduleJobController {
 	 */
 	@SysLog("暫停定時任務")
 	@RequestMapping("/pause")
-	@RequiresPermissions("sys:schedule:pause")
+	//@RequiresPermissions("sys:schedule:pause")
 	public R pause(@RequestBody Long[] jobIds){
 		scheduleJobService.pause(jobIds);
 		
@@ -122,7 +122,7 @@ public class ScheduleJobController {
 	 */
 	@SysLog("恢復定時任務")
 	@RequestMapping("/resume")
-	@RequiresPermissions("sys:schedule:resume")
+	//@RequiresPermissions("sys:schedule:resume")
 	public R resume(@RequestBody Long[] jobIds){
 		scheduleJobService.resume(jobIds);
 		

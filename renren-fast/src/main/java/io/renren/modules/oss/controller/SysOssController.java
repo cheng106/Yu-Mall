@@ -23,7 +23,7 @@ import io.renren.modules.oss.cloud.OSSFactory;
 import io.renren.modules.oss.entity.SysOssEntity;
 import io.renren.modules.oss.service.SysOssService;
 import io.renren.modules.sys.service.SysConfigService;
-import org.apache.shiro.authz.annotation.RequiresPermissions;
+//renren-generator/src/main/resources/template/Controller.java.vm
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -51,7 +51,7 @@ public class SysOssController {
      * 列表
      */
     @GetMapping("/list")
-    @RequiresPermissions("sys:oss:all")
+    //@RequiresPermissions("sys:oss:all")
     public R list(@RequestParam Map<String, Object> params) {
         PageUtils page = sysOssService.queryPage(params);
 
@@ -63,7 +63,7 @@ public class SysOssController {
      * 雲存儲設定訊息
      */
     @GetMapping("/config")
-    @RequiresPermissions("sys:oss:all")
+    //@RequiresPermissions("sys:oss:all")
     public R config() {
         CloudStorageConfig config = sysConfigService.getConfigObject(KEY, CloudStorageConfig.class);
 
@@ -75,7 +75,7 @@ public class SysOssController {
      * 保存雲存儲設定訊息
      */
     @PostMapping("/saveConfig")
-    @RequiresPermissions("sys:oss:all")
+    //@RequiresPermissions("sys:oss:all")
     public R saveConfig(@RequestBody CloudStorageConfig config) {
         //校驗類型
         ValidatorUtils.validateEntity(config);
@@ -101,7 +101,7 @@ public class SysOssController {
      * 上傳文件
      */
     @PostMapping("/upload")
-    @RequiresPermissions("sys:oss:all")
+    //@RequiresPermissions("sys:oss:all")
     public R upload(@RequestParam("file") MultipartFile file) throws Exception {
         if (file.isEmpty()) {
             throw new RRException("上傳文件不能為空");
@@ -111,7 +111,7 @@ public class SysOssController {
         String suffix = file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf("."));
         String url = OSSFactory.build().uploadSuffix(file.getBytes(), suffix);
 
-        //保存文件信息
+        //保存文件訊息
         SysOssEntity ossEntity = new SysOssEntity();
         ossEntity.setUrl(url);
         ossEntity.setCreateDate(new Date());
@@ -125,7 +125,7 @@ public class SysOssController {
      * 刪除
      */
     @PostMapping("/delete")
-    @RequiresPermissions("sys:oss:all")
+    //@RequiresPermissions("sys:oss:all")
     public R delete(@RequestBody Long[] ids) {
         sysOssService.removeByIds(Arrays.asList(ids));
 

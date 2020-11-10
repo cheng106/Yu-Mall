@@ -90,12 +90,12 @@ paths:
     get:
       tags:
         - 管理員管理
-      summary: 目前管理員信息
+      summary: 目前管理員訊息
       produces:
         - application/json
       responses:
         '200':
-          description: 返回目前管理員信息
+          description: 返回目前管理員訊息
           schema:
             type: object
             properties:
@@ -109,7 +109,7 @@ paths:
     get:
       tags:
         - 管理員管理
-      summary: 取得管理員信息
+      summary: 取得管理員訊息
       produces:
         - application/json
       parameters:
@@ -120,7 +120,7 @@ paths:
           required: true
       responses:
         '200':
-          description: 返回管理員信息
+          description: 返回管理員訊息
           schema:
             type: object
             properties:
@@ -270,7 +270,7 @@ paths:
     get:
       tags:
         - 角色管理
-      summary: 取得角色信息
+      summary: 取得角色訊息
       produces:
         - application/json
       parameters:
@@ -281,7 +281,7 @@ paths:
           required: true
       responses:
         '200':
-          description: 返回角色信息
+          description: 返回角色訊息
           schema:
             type: object
             properties:
@@ -355,12 +355,12 @@ paths:
     get:
       tags:
         - 選單管理
-      summary: 导航選單列表
+      summary: 導航選單列表
       produces:
         - application/json
       responses:
         '200':
-          description: 返回导航選單列表
+          description: 返回導航選單列表
           schema:
             type: object
             properties:
@@ -396,8 +396,8 @@ paths:
     get:
       tags:
         - 選單管理
-      summary: 选择選單
-      description: 新增、修改選單的时候，选择上级選單介面
+      summary: 選择選單
+      description: 新增、修改選單的時候，選择上级選單介面
       produces:
         - application/json
       responses:
@@ -419,7 +419,7 @@ paths:
     get:
       tags:
         - 選單管理
-      summary: 取得選單信息
+      summary: 取得選單訊息
       produces:
         - application/json
       parameters:
@@ -430,7 +430,7 @@ paths:
           required: true
       responses:
         '200':
-          description: 返回選單信息
+          description: 返回選單訊息
           schema:
             type: object
             properties:
@@ -439,7 +439,7 @@ paths:
                 type: integer
                 format: int32
               menu:
-                description: 選單信息
+                description: 選單訊息
                 $ref: '#/definitions/SysMenuEntity'
   /sys/menu/save:
     post:
@@ -536,8 +536,8 @@ paths:
   /sys/config/list:
     get:
       tags:
-        - 参數管理
-      summary: 参數列表
+        - 參數管理
+      summary: 參數列表
       produces:
         - application/json
       parameters:
@@ -560,30 +560,30 @@ paths:
           in: query
           type: string
         - name: key
-          description: 参數名
+          description: 參數名
           in: query
           type: string
       responses:
         '200':
-          description: 返回参數列表
+          description: 返回參數列表
           schema:
             $ref: '#/definitions/SysConfigEntityList'
   /sys/config/info/{id}:
     get:
       tags:
-        - 参數管理
-      summary: 取得参數信息
+        - 參數管理
+      summary: 取得參數訊息
       produces:
         - application/json
       parameters:
         - name: id
-          description: 参數ID
+          description: 參數ID
           in: path
           type: integer
           required: true
       responses:
         '200':
-          description: 返回参數信息
+          description: 返回參數訊息
           schema:
             type: object
             properties:
@@ -592,18 +592,18 @@ paths:
                 type: integer
                 format: int32
               config:
-                description: 返回参數信息
+                description: 返回參數訊息
                 $ref: '#/definitions/SysConfigEntity'
   /sys/config/save:
     post:
       tags:
-        - 参數管理
-      summary: 新增参數
+        - 參數管理
+      summary: 新增參數
       produces:
         - application/json
       parameters:
         - name: body
-          description: 参數物件
+          description: 參數物件
           in: body
           type: string
           schema:
@@ -616,13 +616,13 @@ paths:
   /sys/config/update:
     post:
       tags:
-        - 参數管理
-      summary: 修改参數
+        - 參數管理
+      summary: 修改參數
       produces:
         - application/json
       parameters:
         - name: body
-          description: 参數物件
+          description: 參數物件
           in: body
           type: string
           schema:
@@ -635,13 +635,13 @@ paths:
   /sys/config/delete:
     post:
       tags:
-        - 参數管理
-      summary: 刪除参數
+        - 參數管理
+      summary: 刪除參數
       produces:
         - application/json
       parameters:
         - name: body
-          description: 参數ID列表
+          description: 參數ID列表
           in: body
           type: array
           items:
@@ -714,7 +714,7 @@ paths:
         - application/json
       parameters:
         - name: body
-          description: 参數物件
+          description: 參數物件
           in: body
           type: string
           schema:
@@ -769,8 +769,8 @@ paths:
   /sys/schedule/list:
     get:
       tags:
-        - 定时任务
-      summary: 定时任务列表
+        - 定時任务
+      summary: 定時任务列表
       produces:
         - application/json
       parameters:
@@ -798,25 +798,25 @@ paths:
           type: string
       responses:
         '200':
-          description: 返回定时任务列表
+          description: 返回定時任务列表
           schema:
             $ref: '#/definitions/ScheduleJobEntityList'
   /sys/schedule/info/{jobId}:
     get:
       tags:
-        - 定时任务
-      summary: 取得定时任务信息
+        - 定時任务
+      summary: 取得定時任务訊息
       produces:
         - application/json
       parameters:
         - name: jobId
-          description: 定时任务ID
+          description: 定時任务ID
           in: path
           type: integer
           required: true
       responses:
         '200':
-          description: 返回定时任务信息
+          description: 返回定時任务訊息
           schema:
             type: object
             properties:
@@ -825,18 +825,18 @@ paths:
                 type: integer
                 format: int32
               schedule:
-                description: 定时任务信息
+                description: 定時任务訊息
                 $ref: '#/definitions/ScheduleJobEntity'
   /sys/schedule/save:
     post:
       tags:
-        - 定时任务
-      summary: 新增定时任务
+        - 定時任务
+      summary: 新增定時任务
       produces:
         - application/json
       parameters:
         - name: body
-          description: 定时任务物件
+          description: 定時任务物件
           in: body
           type: string
           schema:
@@ -849,13 +849,13 @@ paths:
   /sys/schedule/update:
     post:
       tags:
-        - 定时任务
-      summary: 修改定时任务
+        - 定時任务
+      summary: 修改定時任务
       produces:
         - application/json
       parameters:
         - name: body
-          description: 定时任务物件
+          description: 定時任务物件
           in: body
           type: string
           schema:
@@ -868,13 +868,13 @@ paths:
   /sys/schedule/delete:
     post:
       tags:
-        - 定时任务
-      summary: 刪除定时任务
+        - 定時任务
+      summary: 刪除定時任务
       produces:
         - application/json
       parameters:
         - name: body
-          description: 定时任务ID列表
+          description: 定時任务ID列表
           in: body
           type: array
           items:
@@ -889,13 +889,13 @@ paths:
   /sys/schedule/run:
     post:
       tags:
-        - 定时任务
+        - 定時任务
       summary: 立即执行任务
       produces:
         - application/json
       parameters:
         - name: body
-          description: 定时任务ID列表
+          description: 定時任务ID列表
           in: body
           type: array
           items:
@@ -910,13 +910,13 @@ paths:
   /sys/schedule/pause:
     post:
       tags:
-        - 定时任务
-      summary: 暂停定时任务
+        - 定時任务
+      summary: 暂停定時任务
       produces:
         - application/json
       parameters:
         - name: body
-          description: 定时任务ID列表
+          description: 定時任务ID列表
           in: body
           type: array
           items:
@@ -931,13 +931,13 @@ paths:
   /sys/schedule/resume:
     post:
       tags:
-        - 定时任务
-      summary: 恢复定时任务
+        - 定時任务
+      summary: 恢复定時任务
       produces:
         - application/json
       parameters:
         - name: body
-          description: 定时任务ID列表
+          description: 定時任务ID列表
           in: body
           type: array
           items:
@@ -953,8 +953,8 @@ paths:
   /sys/scheduleLog/list:
     get:
       tags:
-        - 定时任务
-      summary: 定时任务日志列表
+        - 定時任务
+      summary: 定時任务日志列表
       produces:
         - application/json
       parameters:
@@ -982,14 +982,14 @@ paths:
           type: string
       responses:
         '200':
-          description: 返回定时任务日志列表
+          description: 返回定時任务日志列表
           schema:
             $ref: '#/definitions/ScheduleJobLogEntityList'
   /sys/scheduleLog/info/{logId}:
     get:
       tags:
-        - 定时任务
-      summary: 取得定时任务日志信息
+        - 定時任务
+      summary: 取得定時任务日志訊息
       produces:
         - application/json
       parameters:
@@ -1000,7 +1000,7 @@ paths:
           required: true
       responses:
         '200':
-          description: 返回定时任务日志信息
+          description: 返回定時任务日志訊息
           schema:
             type: object
             properties:
@@ -1009,7 +1009,7 @@ paths:
                 type: integer
                 format: int32
               schedule:
-                description: 定时任务日志信息
+                description: 定時任务日志訊息
                 $ref: '#/definitions/ScheduleJobLogEntity'
 
 #定義資料模型
@@ -1035,7 +1035,7 @@ definitions:
           description: token
           type: string
         expire:
-          description: 過期时长
+          description: 過期時长
           type: integer
           format: int32
         msg:
@@ -1085,7 +1085,7 @@ definitions:
         description: 手機
         type: string
       status:
-        description: 状态  0：禁用   1：正常
+        description: 状態  0：禁用   1：正常
         type: integer
         format: int32
       roleIdList:
@@ -1099,7 +1099,7 @@ definitions:
         type: integer
         format: int64
       createTime:
-        description: 建立时间
+        description: 建立時間
         type: string
         format: date-time
   SysUserEntityList:
@@ -1113,19 +1113,19 @@ definitions:
         type: object
         properties:
           totalCount:
-            description: 总记录數
+            description: 總紀錄數
             type: integer
             format: int32
           pageSize:
-            description: 每页记录數
+            description: 每頁紀錄數
             type: integer
             format: int32
           totalPage:
-            description: 总页數
+            description: 總頁數
             type: integer
             format: int32
           currPage:
-            description: 目前页數
+            description: 目前頁數
             type: integer
             format: int32
           list:
@@ -1152,7 +1152,7 @@ definitions:
           description: 手機
           type: string
         status:
-          description: 状态  0：禁用   1：正常
+          description: 状態  0：禁用   1：正常
           type: integer
           format: int32
         roleIdList:
@@ -1173,7 +1173,7 @@ definitions:
         description: 角色名稱
         type: string
       remark:
-        description: 备注
+        description: 備註
         type: string
       menuIdList:
         description: 選單ID列表
@@ -1186,7 +1186,7 @@ definitions:
         type: integer
         format: int64
       createTime:
-        description: 建立时间
+        description: 建立時間
         type: string
         format: date-time
   SysRoleEntityList:
@@ -1200,19 +1200,19 @@ definitions:
         type: object
         properties:
           totalCount:
-            description: 总记录數
+            description: 總紀錄數
             type: integer
             format: int32
           pageSize:
-            description: 每页记录數
+            description: 每頁紀錄數
             type: integer
             format: int32
           totalPage:
-            description: 总页數
+            description: 總頁數
             type: integer
             format: int32
           currPage:
-            description: 目前页數
+            description: 目前頁數
             type: integer
             format: int32
           list:
@@ -1230,7 +1230,7 @@ definitions:
         description: 角色名稱
         type: string
       remark:
-        description: 备注
+        description: 備註
         type: string
       menuIdList:
         description: 選單ID列表
@@ -1326,17 +1326,17 @@ definitions:
         description: 請求方法
         type: string
       params:
-        description: 請求参數
+        description: 請求參數
         type: string
       time:
-        description: 执行时长(毫秒)
+        description: 执行時长(毫秒)
         type: integer
         format: int64
       ip:
         description: IP地址
         type: string
       createTime:
-        description: 建立时间
+        description: 建立時間
         type: string
         format: date-time
   SysLogEntityList:
@@ -1350,19 +1350,19 @@ definitions:
         type: object
         properties:
           totalCount:
-            description: 总记录數
+            description: 總紀錄數
             type: integer
             format: int32
           pageSize:
-            description: 每页记录數
+            description: 每頁紀錄數
             type: integer
             format: int32
           totalPage:
-            description: 总页數
+            description: 總頁數
             type: integer
             format: int32
           currPage:
-            description: 目前页數
+            description: 目前頁數
             type: integer
             format: int32
           list:
@@ -1374,17 +1374,17 @@ definitions:
     type: object
     properties:
       id:
-        description: 参數ID
+        description: 參數ID
         type: integer
         format: int64
       key:
-        description: 参數名
+        description: 參數名
         type: string
       value:
-        description: 参數值
+        description: 參數值
         type: string
       remark:
-        description: 备注
+        description: 備註
         type: string
   SysConfigEntityList:
     type: object
@@ -1397,19 +1397,19 @@ definitions:
         type: object
         properties:
           totalCount:
-            description: 总记录數
+            description: 總紀錄數
             type: integer
             format: int32
           pageSize:
-            description: 每页记录數
+            description: 每頁紀錄數
             type: integer
             format: int32
           totalPage:
-            description: 总页數
+            description: 總頁數
             type: integer
             format: int32
           currPage:
-            description: 目前页數
+            description: 目前頁數
             type: integer
             format: int32
           list:
@@ -1428,7 +1428,7 @@ definitions:
         description: URL地址
         type: string
       createTime:
-        description: 建立时间
+        description: 建立時間
         type: string
         format: date-time
   SysOssEntityList:
@@ -1442,19 +1442,19 @@ definitions:
         type: object
         properties:
           totalCount:
-            description: 总记录數
+            description: 總紀錄數
             type: integer
             format: int32
           pageSize:
-            description: 每页记录數
+            description: 每頁紀錄數
             type: integer
             format: int32
           totalPage:
-            description: 总页數
+            description: 總頁數
             type: integer
             format: int32
           currPage:
-            description: 目前页數
+            description: 目前頁數
             type: integer
             format: int32
           list:
@@ -1481,7 +1481,7 @@ definitions:
         description: 七牛SECRET_KEY
         type: string
       qiniuBucketName:
-        description: 七牛存储空间名
+        description: 七牛存储空間名
         type: string
       aliyunDomain:
         description: 阿里云绑定的域名
@@ -1550,20 +1550,20 @@ definitions:
         description: 方法名
         type: string
       params:
-        description: 参數
+        description: 參數
         type: string
       cronExpression:
         description: cron表达式
         type: string
       status:
-        description: 任务状态  0：正常  1：暂停
+        description: 任务状態  0：正常  1：暂停
         type: integer
         format: int32
       remark:
-        description: 备注
+        description: 備註
         type: string
       createTime:
-        description: 建立时间
+        description: 建立時間
         type: string
         format: date-time
   ScheduleJobEntityList:
@@ -1577,19 +1577,19 @@ definitions:
         type: object
         properties:
           totalCount:
-            description: 总记录數
+            description: 總紀錄數
             type: integer
             format: int32
           pageSize:
-            description: 每页记录數
+            description: 每頁紀錄數
             type: integer
             format: int32
           totalPage:
-            description: 总页數
+            description: 總頁數
             type: integer
             format: int32
           currPage:
-            description: 目前页數
+            description: 目前頁數
             type: integer
             format: int32
           list:
@@ -1615,21 +1615,21 @@ definitions:
         description: 方法名
         type: string
       params:
-        description: 参數
+        description: 參數
         type: string
       status:
-        description: 任务状态    0：成功    1：失敗
+        description: 任务状態    0：成功    1：失敗
         type: integer
         format: int32
       error:
-        description: 失敗信息
+        description: 失敗訊息
         type: string
       times:
-        description: 耗时(单位：毫秒)
+        description: 耗時(单位：毫秒)
         type: integer
         format: int32
       createTime:
-        description: 建立时间
+        description: 建立時間
         type: string
         format: date-time
   ScheduleJobLogEntityList:
@@ -1643,19 +1643,19 @@ definitions:
         type: object
         properties:
           totalCount:
-            description: 总记录數
+            description: 總紀錄數
             type: integer
             format: int32
           pageSize:
-            description: 每页记录數
+            description: 每頁紀錄數
             type: integer
             format: int32
           totalPage:
-            description: 总页數
+            description: 總頁數
             type: integer
             format: int32
           currPage:
-            description: 目前页數
+            description: 目前頁數
             type: integer
             format: int32
           list:

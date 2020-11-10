@@ -15,7 +15,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * 角色与選單对应关系
+ * 角色与選單对应關系
  *
  * @author Mark sunlightcs@gmail.com
  */

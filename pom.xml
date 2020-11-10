@@ -16,6 +16,8 @@
 		<module>yumall-product</module>
 		<module>yumall-ware</module>
 		<module>renren-fast</module>
+		<module>renren-generator</module>
+		<module>yumall-common</module>
 	</modules>
 
 </project>

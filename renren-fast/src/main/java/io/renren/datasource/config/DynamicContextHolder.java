@@ -1,9 +1,9 @@
 /**
- * Copyright (c) 2018 人人开源 All rights reserved.
+ * Copyright (c) 2018 人人開源 All rights reserved.
  * <p>
  * https://www.renren.io
  * <p>
- * 版权所有，侵权必究！
+ * 版權所有，侵權必究！
  */
 
 package io.renren.datasource.config;

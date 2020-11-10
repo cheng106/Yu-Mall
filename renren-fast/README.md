@@ -78,7 +78,7 @@ renren-fast
 
  **後端部署**
 - 通過git下載源碼
-- idea、eclipse需安裝lombok插件，不然會提示找不到entity的get set方法
+- idea、eclipse需安裝lombok套件，不然會提示找不到entity的get set方法
 - 建立資料庫renren_fast，資料庫編碼為UTF-8
 - 執行db/mysql.sql文件，初始化資料
 - 修改application-dev.yml，更新MySQL帳號和密碼
