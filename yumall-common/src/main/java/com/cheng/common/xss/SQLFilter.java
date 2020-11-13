@@ -1,14 +1,14 @@
 /**
  * Copyright (c) 2016-2019 人人開源 All rights reserved.
- *
+ * <p>
  * https://www.renren.io
- *
+ * <p>
  * 版權所有，侵權必究！
  */
 
-package io.renren.common.xss;
+package com.cheng.common.xss;
 
-import io.renren.common.exception.RRException;
+import com.cheng.common.exception.RRException;
 import org.apache.commons.lang.StringUtils;
 
 /**
@@ -22,8 +22,8 @@ public class SQLFilter {
      * SQL注入過濾
      * @param str  待驗證的字串
      */
-    public static String sqlInject(String str){
-        if(StringUtils.isBlank(str)){
+    public static String sqlInject(String str) {
+        if (StringUtils.isBlank(str)) {
             return null;
         }
         // 去掉'|"|;|\字串
@@ -39,8 +39,8 @@ public class SQLFilter {
         String[] keywords = {"master", "truncate", "insert", "select", "delete", "update", "declare", "alter", "drop"};
 
         // 判斷是否包含非法字串
-        for(String keyword : keywords){
-            if(str.contains(keyword)){
+        for (String keyword : keywords) {
+            if (str.contains(keyword)) {
                 throw new RRException("包含非法字串");
             }
         }

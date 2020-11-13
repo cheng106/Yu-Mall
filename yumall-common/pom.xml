@@ -29,6 +29,7 @@
         <mybatis.version>3.4.0</mybatis.version>
         <lombok.version>1.18.4</lombok.version>
         <httpcore.version>4.4.13</httpcore.version>
+        <mysql.version>8.0.22</mysql.version>
     </properties>
 
     <dependencies>
@@ -56,6 +57,21 @@
             <groupId>commons-lang</groupId>
             <artifactId>commons-lang</artifactId>
             <version>${commons.lang.version}</version>
+        </dependency>
+
+        <!-- MySQL驅動 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
+        </dependency>
+
+        <!-- servlet-api -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+            <scope>provided</scope>
         </dependency>
 
     </dependencies>
