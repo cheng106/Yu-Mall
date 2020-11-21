@@ -4,6 +4,12 @@ spring:
     password: e23s5
     url: jdbc:mysql://localhost:3306/yumall_ums
     driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+  application:
+    name: yumall-member
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
   global-config:
