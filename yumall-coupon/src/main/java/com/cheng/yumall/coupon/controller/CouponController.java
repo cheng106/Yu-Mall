@@ -6,6 +6,8 @@ import java.util.Map;
 
 ////renren-generator/src/main/resources/template/Controller.java.vm
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,11 +27,23 @@ import com.cheng.common.utils.R;
  * @email cheng106.andy@gmail.com
  * @date 2020-11-14 01:49:17
  */
+@RefreshScope
 @RestController
 @RequestMapping("coupon/coupon")
 public class CouponController {
     @Autowired
     private CouponService couponService;
+
+    @Value("${coupon.user.name}")
+    private String name;
+    @Value("${coupon.user.age}")
+    private String age;
+
+    @RequestMapping("/test")
+    public R test() {
+        System.out.println("name = " + name);
+        return R.ok().put("name", name).put("age", age);
+    }
 
     @RequestMapping("/member/list")
     public R memberCoupons() {
