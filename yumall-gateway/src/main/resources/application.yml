@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: test_route
+          uri: https://google.com.tw
+          predicates:
+            - Query=url,google
+
+        - id: yahoo_route
+          uri: https://yahoo.com.tw
+          predicates:
+            - Query=ya

@@ -18,6 +18,7 @@
 		<module>renren-fast</module>
 		<module>renren-generator</module>
 		<module>yumall-common</module>
+		<module>yumall-gateway</module>
 	</modules>
 
 </project>
