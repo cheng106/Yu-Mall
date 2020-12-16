@@ -54,6 +54,15 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public void removeMenuByIds(List<Long> asList) {
+        // 檢查目前刪除的選項，是否有父分類
+
+        // 邏輯刪除:使用標記的方式來表示刪除狀態
+        // 實際刪除:從資料庫中Delete一筆資料
+        baseMapper.deleteBatchIds(asList);
+    }
+
     private List<CategoryEntity> getChildren(CategoryEntity root, List<CategoryEntity> all) {
 //        all.stream().filter(categoryEntity -> {
 //            return categoryEntity.getParentCid().equals(root.getCatId());

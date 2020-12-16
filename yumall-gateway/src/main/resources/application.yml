@@ -12,6 +12,13 @@ spring:
           predicates:
             - Query=ya
 
+        - id: product_route
+          uri: lb://yumall-product
+          predicates:
+            - Path=/api/product/**
+          filters:
+            - RewritePath=/api(?<segment>.*), /$\{segment}
+
         - id: admin_route
           uri: lb://renren-fast
           predicates:
