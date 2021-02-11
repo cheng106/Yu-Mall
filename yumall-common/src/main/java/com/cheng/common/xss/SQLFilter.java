@@ -20,7 +20,8 @@ public class SQLFilter {
 
     /**
      * SQL注入過濾
-     * @param str  待驗證的字串
+     *
+     * @param str 待驗證的字串
      */
     public static String sqlInject(String str) {
         if (StringUtils.isBlank(str)) {

@@ -27,7 +27,7 @@ hs_err_pid*
 
 **/.mvn
 **/target/
-
+static/files/
 .idea
 **/.gitignore
 db

@@ -19,6 +19,7 @@
 		<module>renren-generator</module>
 		<module>yumall-common</module>
 		<module>yumall-gateway</module>
+		<module>yumall-third-party</module>
 	</modules>
 
 </project>

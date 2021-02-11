@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    nacos:
+#      config:
+#        extension-configs[0]:
+#          data-id: imgur.yml
+#          group: DEFAULT_GROUP
+#          refresh: true
+      discovery:
+        server-addr: 127.0.0.1:8848
+#        namespace: 38c7b443-1a2a-4a15-b175-bd36729c3a24
+  application:
+    name: yumall-third-party

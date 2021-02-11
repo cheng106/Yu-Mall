@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+  application:
+    name: yumall-third-party
+files:
+  path: /Users/cheng/IdeaProjects/Yu-Mall/static/files
+server:
+  port: 30000
