@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.io.Serializable;
 
+import com.cheng.common.valid.AddGroup;
+import com.cheng.common.valid.UpdateGroup;
 import lombok.Data;
 import org.hibernate.validator.constraints.URL;
 
@@ -25,24 +27,24 @@ public class BrandEntity implements Serializable {
     /**
      * 品牌id
      */
+    @NotNull(message = "修改必須指定品牌ID", groups = {UpdateGroup.class})
+    @Null(message = "新增不能指定ID", groups = {AddGroup.class})
     @TableId
     private Long brandId;
     /**
      * 品牌名稱
      */
-    @NotBlank(message = "品牌名稱不能為空白")
+    @NotBlank(message = "品牌名稱不能為空白", groups = {AddGroup.class, UpdateGroup.class})
     private String name;
     /**
      * 品牌logo地址
      */
-    @NotNull
-    @URL(message = "Logo必須是合法URL")
+    @NotBlank(groups = {AddGroup.class})
+    @URL(message = "Logo必須是合法URL", groups = {AddGroup.class, UpdateGroup.class})
     private String logo;
     /**
      * 介紹
      */
-    @NotNull
-    @NotBlank(message = "介紹不能為空白")
     private String descript;
     /**
      * 顯示狀態[0-不顯示；1-顯示]
@@ -52,14 +54,14 @@ public class BrandEntity implements Serializable {
     /**
      * 搜尋首字母
      */
-    @NotNull
-    @Pattern(regexp = "/^[a-z][A-Z]$/", message = "搜尋首字母必須是單個英文字母")
+    @NotEmpty(groups = {AddGroup.class})
+    @Pattern(regexp = "/^[a-z][A-Z]$/", message = "搜尋首字母必須是單個英文字母", groups = {AddGroup.class, UpdateGroup.class})
     private String firstLetter;
     /**
      * 排序
      */
-    @NotNull
-    @Min(value = 0, message = "排序數字必須大於等於0")
+    @NotNull(groups = {AddGroup.class})
+    @Min(value = 0, message = "排序數字必須大於等於0", groups = {AddGroup.class, UpdateGroup.class})
     private Integer sort;
 
 }

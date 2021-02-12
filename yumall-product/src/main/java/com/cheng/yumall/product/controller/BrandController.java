@@ -4,9 +4,12 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.cheng.common.valid.AddGroup;
+import com.cheng.common.valid.UpdateGroup;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import com.cheng.yumall.product.entity.BrandEntity;
@@ -60,7 +63,7 @@ public class BrandController {
      * 保存
      */
     @PostMapping("/save")
-    public R save(@Valid @RequestBody BrandEntity brand) {
+    public R save(@Validated({AddGroup.class}) @RequestBody BrandEntity brand) {
         brandService.save(brand);
         return R.ok();
     }
@@ -69,9 +72,8 @@ public class BrandController {
      * 修改
      */
     @RequestMapping("/update")
-    public R update(@RequestBody BrandEntity brand) {
+    public R update(@Validated({UpdateGroup.class}) @RequestBody BrandEntity brand) {
         brandService.updateById(brand);
-
         return R.ok();
     }
 
